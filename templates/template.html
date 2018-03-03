@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Template Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <style type="text/css">
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+      <!-- <p>My string: {{my_string}}</p> -->
+      <!-- <p>Value from the list: {{my_list}}</p> -->
+      <p>Pod list running on my minikube cluster:</p>
+
+        {% for n in pod_ip_list %}
+
+              {% if n!="new row" %}
+                      <div class="row">
+
+                        <!-- <div class="col-sm"> -->
+                          <div class="col-sm">
+
+                            {{n}}
+
+                          </div>
+
+                       </div>
+
+
+                       {% else %}
+
+                         <!-- <div class="col-sm"> -->
+                           <div class="col-sm">
+
+                             <hr>
+
+                           </div>
+
+
+                {% endif %}
+
+      {% endfor %}
+
+    </div>
+    </div>
+
+  </body>
+</html>
